@@ -4,7 +4,7 @@
 HƯỚNG DẪN CÀI ĐẶT
 1.	Cài đặt XAMPP : https://www.apachefriends.org/download.html
 Sau khi cài đặt , khởi động Apache và MySQL.
-2.	Tải Folder “NHOM_2--KARABLANCA-COFFEE-WEBSITE” và giải nén.
+2.	Tải Folder “Nhom2_KARABLANCA” và giải nén.
 Đổi tên Folder thành “PTWEB” , sau đó chuyển vào thư mục htdocs trong folder XAMPP tại ổ (C:).
 3.	Vào XAMPP→ MySQL chọn button “Admin”. Trong trang chủ phpMyAdmin, chọn Import , chọn file karablanca.sql để tạo CSDL.
 4.	Vào XAMPP→ Apache chọn button “Admin” (trong trường hợp không truy cập được, dùng đường dẫn  http://127.0.0.1:80  ) để vào dashboard
