@@ -1,4 +1,4 @@
-# NHOM_2--KARABLANCA-COFFEE-WEBSITE
+# Nhom2_KARABLANCA
 Đồ án môn Lập trình Web Nhóm 2 - Chiều thứ 3
 
 HƯỚNG DẪN CÀI ĐẶT
