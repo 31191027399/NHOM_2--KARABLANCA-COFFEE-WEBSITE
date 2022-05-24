@@ -5,7 +5,8 @@ function OpenCon()
  $dbuser = "root";
  $db = "karablanca";
  $pass="";
- $conn = new mysqli($dbhost, $dbuser,  $pass, $db) or die("Connect failed: %s\n". $conn -> error);
+ $conn = new mysqli($dbhost, $dbuser,  $pass, $db) 
+ or die("Connect failed: %s\n". $conn -> error);
  return $conn;
  }
 

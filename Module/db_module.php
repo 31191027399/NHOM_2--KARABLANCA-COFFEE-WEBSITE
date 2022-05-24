@@ -8,17 +8,6 @@ if (mysqli_connect_errno()){
     exit();
 }
 }
-function chayTruyVanTraVeDL($link,$q)
-{
-    $result=mysqli_query($link,$q);
-    return $result;
-}
-function chayTruyVanKhongTraVeDL($link,$q)
-{
-        $result=mysqli_query($link,$q);
-        return $result;
-}  
-
 function giaiPhongBoNho($link,$result)
 {
 try {
