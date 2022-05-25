@@ -106,6 +106,7 @@ else { $_SESSION['dem']=0;}
                     $anh = $_POST['anh'];
                     $mota = $_POST['mota'];
                     $masp = "KRB" . $_SESSION['dem'];
+                    //insertsanpham()
                     $querythem = "INSERT INTO sanpham(masp,tensp,maloaisp,khoiluong,gia,mota,anhsp) SELECT '" . $masp . "','" . $tensp . "',maloaisp,'" . $khoiluong . "','" . $gia . "',
                     '" . $mota . "','" . $anh . "' FROM loaisp  WHERE tenloaisp='" . $tenma . "'";
                    $querythem1 = "INSERT INTO tuongtacsp(masp,date,doanhso) SELECT '" . $masp . "',curdate(),0";
@@ -120,12 +121,15 @@ else { $_SESSION['dem']=0;}
             if (isset($_POST["xoa"])) 
                        { 
            	            $id = $_POST["id"];
+                        //getchitietdh()
                        $query2 = "SELECT masp  FROM chitietdh WHERE masp='" . $id . "'";
                        $result2 = mysqli_query($conn, $query2);
            	            if($result2->num_rows==0)
           	            {
+                            //deletetuongtacsp()
            	                $query_xoatt = "DELETE FROM tuongtacsp WHERE masp='" . $id . "'";
            	                mysqli_query($conn, $query_xoatt);
+                            //deletesanpham()
            	                $query_xoa = " DELETE FROM sanpham WHERE masp='" . $id . "'";
            	                mysqli_query($conn, $query_xoa);
           	                echo "Xóa thành công mã sản phẩm  ";echo $id ;
@@ -151,6 +155,7 @@ else { $_SESSION['dem']=0;}
                             $gia = $_POST['gia'];
                             $anh = $_POST['anh'];
                             $mota = $_POST['mota'];
+                            //updatesanpham()
                             $query_sua = "UPDATE sanpham SET tensp='" . $tensp . "',maloaisp=(SELECT maloaisp from loaisp where tenloaisp='" . $tenma . "'),khoiluong='" . $khoiluong . "', 
                             gia='" . $gia . "',mota='" . $mota . "',anhsp='" . $anh . "' WHERE  masp='" . $tam1 . "' ";
                             mysqli_query($conn, $query_sua);
@@ -191,6 +196,7 @@ else { $_SESSION['dem']=0;}
                             $trang = 1;
                         }
                         $from = ($trang - 1) * $sosp1trang;
+                        //getsanpham()
                         $query1 = "SELECT masp,tensp,gia,khoiluong,tenloaisp,anhsp,mota,sp.maloaisp FROM sanpham sp 
                         join loaisp loai ON sp.maloaisp=loai.maloaisp LIMIT $from,$sosp1trang";
                         $result1 = mysqli_query($conn, $query1);
@@ -219,6 +225,7 @@ else { $_SESSION['dem']=0;}
         </div>
     </div>
     <?php
+    //getsanpham()
     $sql_trang = "SELECT masp,tensp,gia,khoiluong,tenloaisp,anhsp,mota,sp.maloaisp FROM sanpham sp join loaisp loai ON sp.maloaisp=loai.maloaisp";
     $dssp = mysqli_query($conn, $sql_trang);
     $tongsosp = mysqli_num_rows($dssp);

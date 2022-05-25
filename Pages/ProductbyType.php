@@ -20,6 +20,7 @@
     $link = NULL;
     taoketnoi($link); ?>
     <?php
+    //getloaisp()
     $sql_loaisp = "SELECT * FROM loaisp ORDER BY maloaisp ASC";
     $lenh_loaisp = mysqli_query($link, $sql_loaisp);
     ?>
@@ -109,6 +110,7 @@
                                     settype($trang, "int");
                                 }
                                 $from = ($trang - 1) * $sosp1trang;
+                                //getsanpham()
                                 $sql_search = "SELECT * FROM sanpham WHERE maloaisp='$searchby' LIMIT $from,$sosp1trang";
                                 $lenh_search = mysqli_query($link, $sql_search);
 

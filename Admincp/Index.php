@@ -26,6 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($username_err) && empty($password_err)) {
         $conn = OpenCon();
+        //getlogin()
         $sql = "SELECT user, password FROM login WHERE user = ?";
         if ($stmt = mysqli_prepare($conn, $sql)) {
             mysqli_stmt_bind_param($stmt, "s", $param_username);

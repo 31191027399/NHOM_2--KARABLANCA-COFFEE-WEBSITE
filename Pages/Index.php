@@ -93,6 +93,7 @@
         <h2 class="title">SẢN PHẨM CỦA KARABLANCA</h2>
         <div class="row">
             <?php
+            //getsanpham()
             $sql_home = "SELECT sanpham.*,loaisp.tenloaisp FROM sanpham JOIN loaisp WHERE sanpham.maloaisp=loaisp.maloaisp LIMIT 0,8";
             $lenh_home = mysqli_query($link, $sql_home);
             ?>

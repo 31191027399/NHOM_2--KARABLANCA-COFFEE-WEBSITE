@@ -150,6 +150,7 @@ if (isset($_POST['submit']) && ($_POST['submit'])) {
                             } else {
                                 $maphivc = 2;
                             }
+                            //getphivanchuyen()
                             $sql_phivc = "SELECT * FROM phivanchuyen WHERE maphivc='$maphivc'";
                             $kq_phivc = mysqli_query($link, $sql_phivc);
                             $row_phivc = mysqli_fetch_assoc($kq_phivc);
@@ -157,6 +158,7 @@ if (isset($_POST['submit']) && ($_POST['submit'])) {
                             //Áp dụng voucher
                             if (isset($_POST['apvoucher'])) {
                                 $mavoucher = mysqli_real_escape_string($link, $_POST['mavoucher']);
+                                //getvoucher()
                                 $sql_voucher = "SELECT * FROM voucher WHERE mavoucher='$mavoucher' ";
                                 $kq_voucher = mysqli_query($link, $sql_voucher);
                                 $row_voucher = mysqli_fetch_assoc($kq_voucher);

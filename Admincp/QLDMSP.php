@@ -85,6 +85,7 @@ if (isset($_POST["sua"])) {
                     $tensp1 = trim($_POST['tensp']);
                     $flag = false;
                     //$conn = OpenCon();
+                    //getloaisp()
                     $query = "SELECT * FROM loaisp";
                     $result = mysqli_query($conn, $query);
                     while ($row = mysqli_fetch_array($result)) {
@@ -109,6 +110,7 @@ if (isset($_POST["sua"])) {
                 $tam = $_POST['idsua'];
                 //$conn = OpenCon();
                 $tennew = trim($_POST['ten']);
+                //updateloaisp_tenloaisp()
                 $query_sua = "UPDATE loaisp SET tenloaisp='" . $tennew . "' WHERE maloaisp='" . $tam . "' ";
                 mysqli_query($conn, $query_sua);
                 echo "Xóa thành công";
@@ -123,6 +125,7 @@ if (isset($_POST["sua"])) {
                 $query2 = "SELECT COUNT(masp) as dem  FROM sanpham WHERE maloaisp='" . $id . "' group by maloaisp";
                 $result2 = mysqli_query($conn, $query2);
                 $row = mysqli_fetch_array($result2);
+                //deleteloaisp()
                 if ($result2->num_rows == 0) {
                     $query_xoa = "DELETE FROM loaisp WHERE maloaisp='" . $id . "'";
                     mysqli_query($conn, $query_xoa);
@@ -160,6 +163,7 @@ if (isset($_POST["sua"])) {
                             $trang = 1;
                         }
                         $from = ($trang - 1) * $sosp1trang;
+                        //getloaisp()
                         $query = "SELECT * FROM loaisp LIMIT $from,$sosp1trang";
                         $result = mysqli_query($conn, $query);
                         while ($row = mysqli_fetch_array($result)) {  ?>

@@ -50,6 +50,7 @@
         $max=$sokh+1;
         $makh = "KHKRB" . $max;
          // INSERT dữ liệu khách hàng
+         //insertkhachhang()
         $sql = "INSERT INTO khachhang(makh,tenkh,sdt,diachi)
         VALUES ('$makh','$name','$phone','$address')";
         mysqli_query($link, $sql);
@@ -77,6 +78,7 @@
         $row_phivc = mysqli_fetch_assoc($kq_phivc);
         $phivc = $row_phivc['tienvc'];
         // INSERT dữ liệu đơn hàng
+        //insertdonhang()
         if (strlen($maapdung) == 0) {
             $sql2 = "INSERT INTO donhang(madh,ngaydh,giatridh,maphivc,sotienthanhtoan,mavoucher,makh,ghichu)
         VALUES ('$madh','$date','$tong','$maphivc','$thanhtien',NULL,'$makh','$note')";
@@ -144,6 +146,7 @@
                     $tt = $_SESSION['giohang'][$i][1] * $_SESSION['giohang'][$i][2];
                     $maspchitiet = $_SESSION['giohang'][$i][4];
                     $soluongspchitiet = $_SESSION['giohang'][$i][2];
+                    //insertchitietdh()
                     $sql3 = "INSERT INTO chitietdh(madh,masp,soluong)
                     VALUES ('$madh','$maspchitiet','$soluongspchitiet')";
                     mysqli_query($link, $sql3);

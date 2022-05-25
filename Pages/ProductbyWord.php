@@ -20,6 +20,7 @@
     $link = NULL;
     taoketnoi($link); ?>
     <?php
+    //getloaisp()
     $sql_loaisp = "SELECT * FROM loaisp ORDER BY maloaisp ASC";
     $lenh_loaisp = mysqli_query($link, $sql_loaisp);
     ?>
@@ -107,6 +108,7 @@
                                     settype($trang, "int");
                                 }
                                 $from = ($trang - 1) * $sosp1trang;
+                                //getsanpham()
                                 $sql_search = "SELECT sanpham.*,loaisp.tenloaisp FROM sanpham JOIN loaisp ON sanpham.maloaisp=loaisp.maloaisp
                                 WHERE masp LIKE '%$searchby%' OR  tensp LIKE '%$searchby%' OR  
                                 khoiluong LIKE '%$searchby%' OR gia LIKE '%$searchby%' OR tenloaisp LIKE '%$searchby%' LIMIT $from,$sosp1trang";

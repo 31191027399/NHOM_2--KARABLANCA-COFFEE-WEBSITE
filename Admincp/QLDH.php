@@ -35,6 +35,7 @@ $conn = OpenCon();
         <div class="main">
             <div class="order-list">
                 <?php
+                //updatedonhang_trangthai()
                 if (isset($_POST["huy"])) {
                     $id = $_POST["id"];
                     $query_huy = "UPDATE donhang SET trangthaidh=N'Hủy' WHERE madh='" . $id . "'";
@@ -80,6 +81,7 @@ $conn = OpenCon();
                             } else {
                                 $trang = 1;
                             }
+                            //getdonhang()
                             $from = ($trang - 1) * $sosp1trang;
                             $query = "SELECT * FROM donhang LIMIT $from,$sosp1trang";
                             $result = mysqli_query($conn, $query);
@@ -110,6 +112,7 @@ $conn = OpenCon();
 
         </div>
         <?php
+        //getdonhang()
         $sql_trang = "SELECT * FROM donhang";
         $dssp = mysqli_query($conn, $sql_trang);
         $tongsosp = mysqli_num_rows($dssp);
@@ -153,6 +156,7 @@ $conn = OpenCon();
                 </tr>
                 <tr>
                     <?php
+                    //getchitietdh
                     if (isset($_POST['ma'])) {
                         $madh = $_POST['ma'];
                         $query1 = "SELECT ct.masp,sp.tensp,ct.soluong ,sp.gia, ct.soluong*sp.gia as cong FROM chitietdh ct join sanpham sp ON ct.masp=sp.masp WHERE madh='" . $madh . "'";

@@ -20,6 +20,7 @@
     $link = NULL;
     taoketnoi($link); ?>
     <?php
+    //getloaisp()
     $sql_loaisp = "SELECT * FROM loaisp ORDER BY maloaisp ASC";
     $lenh_loaisp = mysqli_query($link, $sql_loaisp);
     ?>
@@ -97,6 +98,7 @@
 
                             if (isset($_GET['filter'])) {
                                 $order=($_GET['filter']);
+                                //getsanpham()
                                 $sql_search = "SELECT sanpham.* FROM sanpham JOIN tuongtacsp ON sanpham.masp=tuongtacsp.masp ORDER BY $order";
                                 $lenh_search = mysqli_query($link, $sql_search);
                             }           

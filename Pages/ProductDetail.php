@@ -26,6 +26,7 @@
         <?php
         if (isset($_GET['title'])) {
             $searchmasp = mysqli_real_escape_string($link, $_GET['title']);
+            //getsanpham()
 
             $sql_searchmasp = "SELECT * FROM sanpham WHERE masp='$searchmasp'";
 
