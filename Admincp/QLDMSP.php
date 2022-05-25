@@ -113,7 +113,7 @@ if (isset($_POST["sua"])) {
                 //updateloaisp_tenloaisp()
                 $query_sua = "UPDATE loaisp SET tenloaisp='" . $tennew . "' WHERE maloaisp='" . $tam . "' ";
                 mysqli_query($conn, $query_sua);
-                echo "Xóa thành công";
+                echo "Sửa thành công";
                 //CloseCon($conn);
             }
 
