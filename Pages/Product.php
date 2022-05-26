@@ -79,7 +79,7 @@
                             <i class="select-input__icon fa-solid fa-angle-down"></i>
                             <ul class="select-input__list">
                                 <li class="select-input__item">
-                                    <a href="./ProductbyFilter.php?filter=gia ASC>" class="select-input__link">Từ thấp đến cao</a>
+                                    <a href="./ProductbyFilter.php?filter=gia ASC" class="select-input__link">Từ thấp đến cao</a>
                                 </li>
                                 <li class="select-input__item">
                                     <a href="./ProductbyFilter.php?filter=gia DESC" class="select-input__link">Từ cao đến thấp</a>
