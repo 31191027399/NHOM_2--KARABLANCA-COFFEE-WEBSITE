@@ -69,9 +69,9 @@
 
                     <div class="search-filter">
                         <span class="search-filter__label">Sắp xếp theo</span>
-                        <a href="./ProductbyFilter.php?filter=date DESC>"><button class="search-filter__btn"> Mới nhất
+                        <a href="./ProductbyFilter.php?filter=date DESC"><button class="search-filter__btn"> Mới nhất
                             </button> </a>
-                        <a href="./ProductbyFilter.php?filter=doanhso ASC>"><button class="search-filter__btn">Bán chạy
+                        <a href="./ProductbyFilter.php?filter=doanhso ASC"><button class="search-filter__btn">Bán chạy
                             </button> </a>
                         <div class="select-input">
                             <span class="select-input__label">Giá
