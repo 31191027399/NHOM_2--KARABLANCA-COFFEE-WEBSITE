@@ -36,10 +36,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (mysqli_stmt_num_rows($stmt) == 1) {
                     mysqli_stmt_bind_result($stmt, $user,  $hashed_password);
                     if (mysqli_stmt_fetch($stmt)) {
-                        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-                        if (password_verify($password, $hashed_password)) {
+                        if (strcmp($password, $hashed_password) == 0){
                             session_start();
-
                             $_SESSION["loggedin"] = true;
                             $_SESSION["user"] = $username;
 
@@ -58,8 +56,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             mysqli_stmt_close($stmt);
         }
     }
-
-    CloseCon($conn);
 }
 ?>
 
